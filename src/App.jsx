@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { CChart } from "@coreui/react-chartjs";
+import Dropdown from "react-dropdown";
 
 function App() {
+  const options = ["5 Years", "10 Years", "15 Years", "20 Years", "25 Years"];
   const [homevalue, setHomeValue] = useState(1000);
   const [downPayment, setDownPayment] = useState(0);
   const [loanAmount, setLoanAmount] = useState(0);
@@ -82,8 +84,20 @@ function App() {
               max="18"
             />
           </div>
-          <div className="ind">
-            <select type="number" ></select>
+          <div className="ind" style={{margin:"1rem 0 0rem 0"}}>
+          {/* <select value={tenure} onChange={(e) => setTenure(parseInt(e.currentTarget.value))}>
+        <option value="5 years">5</option>
+        <option value="10 years">10</option>
+        <option value="15 years">15</option>
+        <option value="20 years">20</option>
+        <option value="25 years">25</option>
+      </select> */}
+<p>Select tenure</p>
+      <Dropdown
+              options={options}
+              onChange={(value) => { setTenure(parseInt(value.value)); }}
+              value={tenure.toString()}
+            />
           </div>
 
 
