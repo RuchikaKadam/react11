@@ -92,7 +92,7 @@ function App() {
         <option value="20 years">20</option>
         <option value="25 years">25</option>
       </select> */}
-<p>Select tenure</p>
+<p>Select tenure in years below</p>
       <Dropdown
               options={options}
               onChange={(value) => { setTenure(parseInt(value.value)); }}
@@ -111,7 +111,7 @@ function App() {
             labels: ["Principle", "Interest"],
             datasets: [
               {
-                backgroundColor: ["#41B883", "#E46651"],
+                backgroundColor: ["#6263cb", "#A2AEBB"],
                 data: [homevalue, monthlyPayment * tenure * 12 - loanAmount],
               },
             ],
